@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 function Countries(props) {
   const { setSelectedCountry } = props;
@@ -28,7 +28,7 @@ function Countries(props) {
         country.darkMode
           ? "dark:bg-dark-blue dark:text-white"
           : "dark:bg-gray-800 dark:text-white"
-      } cursor-pointer shadow-md mobile:h-[400px] tablet:h-[300px] desktop:h-[300px] mobile:w-full tablet:w-[250px] desktop:w-[250px] rounded-md mb-[40px]`}
+      } cursor-pointer shadow-md h-[400px] w-[250px] rounded-md mb-[40px]`}
     >
       <div className="flex h-[145px]">
         <img

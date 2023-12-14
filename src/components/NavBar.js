@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IoMoonOutline } from "react-icons/io5";
 
 function NavBar() {

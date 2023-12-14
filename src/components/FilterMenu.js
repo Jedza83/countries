@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 
 function FilterMenu(props) {
@@ -19,7 +19,7 @@ function FilterMenu(props) {
     { value: "Europe", text: "Europe" },
     { value: "Asia", text: "Asia" },
     { value: "Africa", text: "Africa" },
-    { value: "Americas", text: "America" },
+    { value: "Americas", text: "Americas" },
     { value: "Oceania", text: "Oceania" },
   ];
 
