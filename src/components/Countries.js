@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Countries(props) {
-  const { setSelectedCountry } = props;
+function Countries() {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
@@ -14,16 +13,12 @@ function Countries(props) {
         console.error("Error fetching data:", error);
       }
     };
-
     fetchData();
   }, []);
 
   const countriesView = countries.map((country) => (
     <div
       key={country.cca3}
-      onClick={() => {
-        setSelectedCountry(country);
-      }}
       className={`flex flex-col bg-white ${
         country.darkMode
           ? "dark:bg-dark-blue dark:text-white"

@@ -19,7 +19,7 @@ function Search(props) {
             ? "dark:bg-dark-blue dark:text-white"
             : "dark:bg-white dark:text-black"
         } placeholder-${darkMode ? "white" : "black"} rounded-r-md`}
-        onChange={(e) => setSearchText(e.target.value)}
+        /*  onChange={(e) => setSearchText(e.target.value)} */
       />
       <span className="flex-grow"></span>
       <FilterMenu className="m-10" />

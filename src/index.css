@@ -21,10 +21,6 @@ body {
   background-color: var(--very-light-gray);
 }
 
-.dark {
-  background-color: var(--very-dark-blue);
-}
-
 .auto-grid-tiles {
   grid-template-columns: repeat(auto-fill, 250px);
 }
