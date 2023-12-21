@@ -1,9 +1,6 @@
 import { CiSearch } from "react-icons/ci";
-import FilterMenu from "./FilterMenu";
 
-function Search(props) {
-  const { setSearchText, darkMode } = props;
-
+const Search = ({ setSearchText, darkMode }) => {
   return (
     <div className="flex items-center w-full">
       <CiSearch
@@ -19,12 +16,11 @@ function Search(props) {
             ? "dark:bg-dark-blue dark:text-white"
             : "dark:bg-white dark:text-black"
         } placeholder-${darkMode ? "white" : "black"} rounded-r-md`}
-        /*  onChange={(e) => setSearchText(e.target.value)} */
+        onChange={(e) => setSearchText(e.target.value)}
       />
       <span className="flex-grow"></span>
-      <FilterMenu className="m-10" />
     </div>
   );
-}
+};
 
 export default Search;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { IoMoonOutline } from "react-icons/io5";
 
 function NavBar() {
@@ -7,9 +7,15 @@ function NavBar() {
   const toggleDarkMode = () => {
     const updatedIsDarkMode = !isDarkMode;
     const html = document.querySelector("html");
+    const body = document.querySelector("body");
+
     updatedIsDarkMode
       ? html.classList.add("dark")
       : html.classList.remove("dark");
+
+    // Postavi boju pozadine i teksta za body
+    body.style.backgroundColor = updatedIsDarkMode ? "#1a1a1a" : "#fff";
+    body.style.color = updatedIsDarkMode ? "#fff" : "#000";
 
     setIsDarkMode(updatedIsDarkMode);
   };

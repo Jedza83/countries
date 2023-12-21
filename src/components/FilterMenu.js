@@ -1,8 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { IoIosArrowUp } from "react-icons/io";
 
-function FilterMenu(props) {
-  const { regionFilter, setRegionFilter, darkMode } = props;
+const FilterMenu = ({ onRegionChange, darkMode }) => {
   const [showSelectOptions, setShowSelectOptions] = useState(false);
 
   const toggleOptions = () => {
@@ -10,12 +9,12 @@ function FilterMenu(props) {
   };
 
   const handleRegionChange = (selectedRegion) => {
-    setRegionFilter(selectedRegion);
+    onRegionChange(selectedRegion);
     setShowSelectOptions(false);
   };
 
   const options = [
-    { value: "", text: "Clear Filter" },
+    { value: "", text: "All" },
     { value: "Europe", text: "Europe" },
     { value: "Asia", text: "Asia" },
     { value: "Africa", text: "Africa" },
@@ -37,7 +36,7 @@ function FilterMenu(props) {
             <div
               key={option.value}
               className="cursor-pointer p-2 hover:bg-gray-200 dark:hover:bg-dark-gray"
-              onClick={() => handleRegionChange(option)}
+              onClick={() => handleRegionChange(option.value)}
             >
               {option.text}
             </div>
@@ -54,11 +53,7 @@ function FilterMenu(props) {
           className="flex justify-between items-center w-full h-full"
           onClick={toggleOptions}
         >
-          <div className="flex pl-[25px]">
-            {regionFilter && regionFilter.value
-              ? regionFilter.text
-              : "Filter by Region"}
-          </div>
+          <div className="flex pl-[25px]">All</div>
           <div className="flex pr-[25px]">
             <IoIosArrowUp
               className={darkMode ? "text-white" : ""}
@@ -73,6 +68,6 @@ function FilterMenu(props) {
       </div>
     </div>
   );
-}
+};
 
 export default FilterMenu;
